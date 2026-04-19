@@ -1,0 +1,12 @@
+{
+  "name": "StadiumFlow AI",
+  "description": "The AI Operating System for Modern Stadiums. Optimizing crowd flow, safety, and fan experience in real-time.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "Crowd Intelligence",
+    "Predictive Operations",
+    "Smart Concierge"
+  ]
+}

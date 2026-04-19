@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Outfit:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #0066FF;
+  --color-brand-neon: #00FF94;
+  --color-brand-alert: #FF3B30;
+  --color-stadium-navy: #0A0E1A;
+  --color-stadium-card: #151B2E;
+  --color-stadium-line: #1F2937;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-stadium-navy text-white font-sans antialiased;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-stadium-card/80 backdrop-blur-md border border-white/10 rounded-xl;
+  }
+  
+  .neon-glow {
+    text-shadow: 0 0 10px rgba(0, 255, 148, 0.4);
+  }
+  
+  .blue-glow {
+    box-shadow: 0 0 20px rgba(0, 102, 255, 0.2);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-stadium-navy;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-blue-900/50 rounded-full;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.33); opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+
+.pulse-point {
+  position: relative;
+}
+.pulse-point::before {
+  content: '';
+  position: absolute;
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
